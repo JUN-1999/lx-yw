@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="demo1" style="width: 500px;height: 500px;"></div>
+
+    <button>xxx</button>
+
+    <script>
+        // 基于dom，初始化echarts实例
+        let myChart = echarts.init(document.getElementById('demo1'));
+        // 指定图标的配置项和数据
+        let option = {
+            title: {
+                text: '测试的图表'
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ['苍云', '七秀', '五毒', '长歌', '万花']
+            },
+            yAxis: {
+
+            },
+            series: [{ name: '销量', type: 'bar', data: [1, 20, 10, 15, 8] }]
+        }
+        // 给实例化的echart设定规则
+        myChart.setOption(option)
+    </script>
+</body>
+
+</html>

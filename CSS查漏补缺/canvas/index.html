@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+       
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <img id="img" src="./11.jpg" alt="img" width="500" height="500"> -->
+    <div class="main">
+        <canvas style="border:1px solid #000000;" id="canvas" width="500" height="500">
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas>
+    </div>
+
+
+
+    <script>
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+
+
+
+        // var img = document.getElementById("img");
+        var img = new Image();
+        img.src = './11.jpg';
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 500, 500);
+        }
+            //    //红色方块
+            //    ctx.fillStyle = "#FF0000";
+        // ctx.fillRect(0, 0, 150, 75);
+
+        // //   蓝色方块
+        // ctx.fillStyle = "#9cdcfe";
+        // ctx.fillRect(20, 20, 150, 75);
+        // // 一条直线
+        // ctx.moveTo(0, 0);
+        // ctx.lineTo(500, 500);
+        // ctx.stroke();
+
+        // // 一个圆圈
+        // ctx.beginPath();
+        // ctx.arc(250, 250, 40, 0, 2 * Math.PI);
+        // ctx.stroke();
+
+        // // 实心文本
+        // ctx.font = "30px Arial";
+        // ctx.fillText("Hello World", 210, 250);
+
+        // // 空心文本
+        // ctx.font = "30px Arial";
+        // ctx.strokeText("Hello World", 210, 280);
+
+    </script>
+</body>
+
+</html>

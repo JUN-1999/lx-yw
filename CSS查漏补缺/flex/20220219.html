@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="warp">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+    </div>
+
+
+    <style>
+        .warp {
+            height: 888px;
+            border: 30px solid antiquewhite;
+            /* 设置为flex布局 */
+            display: flex;
+            /* 修改主轴方向 */
+            flex-direction: row;
+            /* 主轴的排列方式 */
+            justify-content: center;
+            /* 交叉轴的排列方式 */
+            align-items: center;
+            /* 是否换行 */
+            /* flex-wrap: wrap; */
+        }
+
+        .box {
+            height: 200px;
+
+            color: black;
+            font-size: 41px;
+
+        }
+
+        .box-1 {
+            width: 200px;
+            background: rgb(130, 148, 123);
+            order: 10;
+        }
+
+        .box-2 {
+            background: aqua;
+            width: 200px;
+            /* 子元素分配剩余的空间 */
+            /* flex-grow: 1; */
+            /* width: 200px; */
+            /* 元素不会被挤压 */
+            /* flex-shrink:0 ; */
+            /* 元素的初始长度   会替代width */
+            /* flex-basis:200px; */
+            /* flex简写：flex，是否等分，是否被压缩，元素的初始长度 */
+
+            /* 交叉轴上的自定义 */
+            align-self: flex-start;
+            /* 设置元素在主轴的顺序，越小越靠前，没有设置的默认值为0 */
+            order: 1;
+        }
+
+        .box-3 {
+           width: 200px;
+            background: aquamarine;
+        }
+    </style>
+</body>
+
+</html>

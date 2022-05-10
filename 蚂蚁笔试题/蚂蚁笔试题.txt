@@ -1,0 +1,60 @@
+ 第一题：使用promise，实现一个延迟函数delay
+// 本题可以使用浏览器开发者工具进行调试，请务必调试通过，不能有语法错误
+
+const delay = () => {
+   // TODO: 你的代码
+}
+const main = async () => {
+   await delay(2000) 
+   console.log("Hello world") // 最早 2 秒之后才执行
+}
+
+
+
+// 第二题：将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
+// 本题可以使用浏览器开发者工具进行调试，请务必调试通过，不能有语法错误
+const arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+function flatArr(arr) {
+  // TODO: 你的代码
+}
+flatArr(arr);
+
+
+
+/**
+* 第三题
+* 说明：实现一个方法，用于比较两个版本号（version1、version2）
+*     如果version1 > version2，返回1；如果version1 < version2，返回-1，其他情况返回0
+*     版本号规则`x.y.z`，xyz均为大于等于0的整数，至少有x位
+* 示例：
+* compareVersion('0.1', '1.1.1'); // 返回-1
+* compareVersion('13.37', '1.2 '); // 返回1
+* compareVersion('1.1', '1.1.0'); // 返回0
+*/
+// 本题可以使用浏览器开发者工具进行调试，请务必调试通过，不能有语法错误
+function compareVersion(version1, version2) {  
+   // TODO: 你的代码
+}
+
+
+
+// 第四题：使用css完成header-content-footer的经典布局, 要求header和footer高度都固定100px，
+// content高度根据浏览器窗口高度自适应（即content高度 = 浏览器窗口高度 - header高度 - footer高度）
+
+<div class="container">
+ <div class="header">头部信息</div>
+ <div class="content">中间内容</div>
+ <div class="footer">底部信息</div>
+</div>
+
+<style>
+/* TODO：你的CSS */
+
+</style>
+
+
+
+// 第五题：使用React实现类似Antd（Ant Design）的对话框Modal组件。只需要实现基本功能，不需要像Antd那样功能完善。
+// 对话框组件有标题、内容区域和底部，并且底部有两个按钮Ok和Cancel。
+// Modal组件要求支持title（对话框标题），visible（对话框是否可见），
+// onOk（点击确认按钮的回调函数）和onCancel（点击取消按钮的回调函数）属性prop。

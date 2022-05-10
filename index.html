@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var msg = 'hello';
+        // for (var i = 0; i < 10; i++) {
+        //     msg = 'hello' + i * 2 + i;
+        // }
+        // console.log(msg);
+
+        // console.log(true+1);
+        // console.log('name'+true);
+        // console.log(undefined+1);
+        // console.log(typeof null);
+
+        /*
+        function test() {
+            var arr = [];
+
+            for (var i = 0; i < 10; i++) {
+                arr[i] = function () {
+                    document.write(i + ' ');
+                    // console.log(i + '');
+                }
+            }
+            return arr;
+        }
+        var myArr = test();
+
+        for (var j = 0; j < 10; j++) {
+            myArr[j]();
+        }
+        */
+
+
+        // 字节面试题
+        // var a = 10;
+
+        // (function () {
+        //     console.log(a);
+        //     a = 5;
+        //     console.log(window.a);
+        //     console.log(a);
+        //     var a = 20;//如果var a=20改成let a = 20;打印什么
+        //     console.log(a);
+        // })()
+        // 函数内的流程
+        // (function () {
+        //     var a;
+        //     console.log(a); // undefined
+        //     a = 5;
+        //     console.log(window.a); //10
+        //     console.log(a); //5
+        //      a = 20;//如果var a=20改成let a = 20;打印什么 答：会打印a未定义 在 第一次打印a的语句
+        //     console.log(a); //20
+        // })()
+        // var a = [0];
+        // if (a) {
+        //     console.log(a == true);//执行这条语句， [0]不等于true 所以打印false
+        // } else {
+        //     console.log(a);
+        // }
+
+        var reverseKGroup = function (head, k) {
+            if (head == null) return null // 空链表不翻转
+            if (k <= 1) return head // k == 1 不翻转
+
+            // 链表前k个是否都存在
+            let currentNode = head
+            for (let i = 0; i < k; i++) {
+                if (currentNode == null) return head // 不满足k个链表，不翻转
+                currentNode = currentNode.next
+            }
+
+            // 递归翻转第k个后面的链表
+            let lastNode = reverseKGroup(currentNode, k)
+
+            // 翻转前k个
+            for (let i = 0; i < k; i++) {
+                let node = head.next
+                head.next = lastNode
+                lastNode = head
+                head = node
+            }
+            return lastNode
+        }
+
+
+        var head = new LinkedList();
+        head.append(1);
+        head.append(2);
+        head.append(3);
+        head.append(4);
+        head.append(5);
+
+        let k = 2
+        console.log(reverseKGroup(head, k));
+    </script>
+</body>
+
+</html>

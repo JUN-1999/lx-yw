@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="demo1" style="width: 800px;height: 500px;"></div>
+
+
+    <script>
+        // 基于dom，初始化echarts实例
+        let myChart = echarts.init(document.getElementById('demo1'));
+        //初始化数据
+        let data = [];
+        var now = new Date(2020, 3, 1);
+        var oneDay = 24 * 3600 * 1000;
+        var value = Math.random() * 1000;
+        for (let i = 0; i < 20; i++) {
+            now = new Date(now.getTime() + oneDay)
+            value = value + Math.random() * 21;
+            data.push({
+                name: now.toString(),
+                value: [
+                    [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                    Math.round(value)
+                ]
+            })
+        }
+
+        console.log('data', data);
+
+        // 指定图标的配置项和数据
+        let option = {
+            // 配置图表的标题
+            title: {
+                text: '动态折线图'
+            },
+            // 鼠标悬浮图标折线时提示的内容
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (parmas) {
+                    console.log('鼠标悬浮显示的内容', parmas);
+                    return `
+                        日期: ${parmas[0].value[0]}
+                        数值：${parmas[0].value[1]}
+                    `;
+                },
+                axisPointer: {
+                    animation: false
+                },
+            },
+            // 配置x轴
+            xAxis: {
+                // 数据类型 时间类型，category类目轴，value数值轴，time时间轴，log对数轴
+                type: 'time',
+                splitLine: {
+                    show: false
+                }
+            },
+            // 配置y轴
+            yAxis: {
+                // 数据类型
+                type: 'value',
+                // 分割线是否显示
+                splitLine: {
+                    show: false
+                },
+                //设置坐标轴 留白政策
+                boundaryGap: ['2%', '100%']
+            },
+            series: [{
+                name: '股票数据',
+                type: 'line',
+                data: data
+            }]
+
+        }
+        // 给实例化的echart设定规则
+        myChart.setOption(option)
+
+
+        // 更新数据
+        setInterval(() => {
+            data.shift();//删除第一个
+            now = new Date(now.getTime() + oneDay)
+            value = value + Math.random() * 21;
+            data.push({
+                name: now.toString(),
+                value: [
+                    [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('-'),
+                    Math.round(value)
+                ]
+            })
+            // 给实例化的echart设定规则
+            myChart.setOption({
+                series: [{
+                    data: data
+                }]
+            })
+        }, 1000)
+    </script>
+</body>
+
+</html>

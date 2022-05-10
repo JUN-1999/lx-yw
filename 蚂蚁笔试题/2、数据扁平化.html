@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 第二题：将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
+        // 本题可以使用浏览器开发者工具进行调试，请务必调试通过，不能有语法错误
+        const arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10];
+        // 方法一：利用map循环 、递归 得到结果
+        // function flatArr(arr) {
+        //     // TODO: 你的代码
+        //     var res = [];
+        //     arr.map(item => {
+        //         if (Array.isArray(item)) {
+        //             res = res.concat(flatArr(item));
+        //         } else {
+        //             res.push(item);
+        //         }
+        //     });
+        //     return res;
+        // }
+
+        // 方法二：  数组的sort方法只适用字符串、如果是对于数字的排序 则需要在sort中加入function(a, b){return a - b} 这个函数
+        function flatArr(arr) {
+            // TODO: 你的代码
+            let newarr= arr.join(',').split(',').map(function (item) {
+                return parseInt(item);
+            }).sort(function(a, b){return a - b});
+            return [...new Set(newarr)];
+        }
+        console.log(flatArr(arr));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./pixi.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // let type = "WebGL"
+        // if (!PIXI.utils.isWebGLSupported()) {
+        //     type = "canvas"
+        // }
+
+        // PIXI.utils.sayHello(type)
+
+        //Create a Pixi Application  创建一个场景
+        let app = new PIXI.Application({
+            width: 256,
+            height: 256,
+            antialias: true,    // default: false 反锯齿
+            transparent: false, // default: false 透明度
+            resolution: 1,  // default: 1 分辨率
+            forceCanvas: true, //使用 canvas渲染
+        });
+        app.renderer.backgroundColor = 0xffc3dc;
+
+        app.renderer.autoResize = true;
+        app.renderer.resize(512, 512);
+
+        //Add the canvas that Pixi automatically created for you to the HTML document
+        // 将场景渲染到页面上
+        document.body.appendChild(app.view);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blue"></div>
+        <div class="brown"></div>
+        <div class="green"></div>
+    </div>
+
+
+    <style>
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(102, 117, 36);
+        }
+
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(147, 212, 241);
+        }
+
+        .brown {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(247, 171, 171);
+        }
+
+        .green {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(131, 245, 131);
+        }
+    </style>
+    <style>
+        .wrapper {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .blue{
+            flex: 1;
+        }
+        .brown{
+            flex: 1;
+        }
+        .green{
+            flex: 1;
+        }
+        
+    </style>
+</body>
+
+</html>

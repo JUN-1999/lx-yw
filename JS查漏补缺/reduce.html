@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简单数据类型 去重
+        // let arr = [1, 2, 5, 3, 3, 4, 5, 1, 2, 3]
+
+        // let newarr = arr.reduce((pre, cur) => {
+        //     !pre.includes(cur) && pre.push(cur)
+        //     return pre
+        // }, [])
+        // console.log(newarr);
+
+        // 使用 sort 进行排序
+        // newarr.sort(function (a, b) {
+        //     return b - a;
+        // });
+
+        // 从小到大排序(冒泡)
+        // for (let i = 0; i < newarr.length; i++) {
+        //     for (let j = i + 1; j < newarr.length; j++) {
+        //         if (newarr[i] > newarr[j]) {
+        //             let item = newarr[i];
+        //             newarr[i] = newarr[j];
+        //             newarr[j] = item;
+        //         }
+        //     }
+        // }
+        // console.log(newarr);
+
+        // 复杂数据类型 去重
+        // let list = [
+        //     {
+        //         subject: "数学",
+        //         marks: 80
+        //     },
+        //     {
+        //         subject: "语文",
+        //         marks: 90
+        //     },
+        //     {
+        //         subject: "英语",
+        //         marks: 80
+        //     },
+        // ]
+        // function arrSet(value, arr) {
+        //     let obj = {}; // 定义一个对象，用来存储去重的是哪些值，作为标准
+        //     return arr.reduce((per, cur) => {
+        //         if (!obj[cur[value]]) {
+        //             obj[cur[value]] = true;
+        //             per.push(cur);
+        //         }
+        //         return per
+        //     }, [])
+        // }
+        // let result = arrSet("marks", list); // 传入根据哪个key去去重条件
+        // console.log(result);  //[{subject:"数学",marks:80}，{subject:"语文"：90}]
+    </script>
+
+
+    <script>
+        // 扁平化数组
+        // 二维数组变为一维数组
+        // let arr = [[1, 2, 3], [4, 5]];
+        // let newarr = arr.reduce((pre, cur) => {
+
+        //     return pre.concat(cur)
+        // }, [])
+        // console.log(newarr);
+
+        // 多为数组 变为一维数组
+
+        let arr = [[1, 2, 3], [[4, 5], [6, 7]]];
+        function quchong(arr) {
+            return arr.reduce((pre, cur) => {
+                return pre.concat(Array.isArray(cur) ? quchong(cur) : cur);
+            }, [])
+        }
+
+        console.log(quchong(arr));
+    </script>
+</body>
+
+</html>

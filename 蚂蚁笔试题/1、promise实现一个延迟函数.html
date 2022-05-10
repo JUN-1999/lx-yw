@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  第一题：使用promise，实现一个延迟函数delay
+        // 本题可以使用浏览器开发者工具进行调试，请务必调试通过，不能有语法错误
+
+        const delay = (time) => {
+            // TODO: 你的代码
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve();
+                }, time);
+            })
+        }
+        const main = async () => {
+            await delay(2000)
+            console.log("Hello world") // 最早 2 秒之后才执行
+        }
+        main();
+    </script>
+</body>
+
+</html>

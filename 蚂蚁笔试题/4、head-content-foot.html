@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* TODO：你的CSS */
+        .header {
+            height: 100px;
+            background-color: pink;
+        }
+
+        .content {
+            background-color: yellowgreen;
+            flex: 1;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 第四题：使用css完成header-content-footer的经典布局, 要求header和footer高度都固定100px，
+        // content高度根据浏览器窗口高度自适应（即content高度 = 浏览器窗口高度 - header高度 - footer高度）
+    </script>
+
+
+    <div class="container">
+        <div class="header">头部信息</div>
+        <div class="content">中间内容</div>
+        <div class="footer">底部信息</div>
+    </div>
+
+    <!-- <script>
+        function A() { }
+        function B(a) { 
+            console.log(a);
+            console.log(this.a);
+            this.a = a; 
+        }
+        function C(a) {
+            console.log(a);
+            console.log(this.a);
+            if (a) { this.a = a; }
+        }
+        A.prototype.a = 1;
+        B.prototype.a = 1;
+        C.prototype.a = 1;
+
+        A();
+        B(2);
+        C(3);
+        console.log(A, B, C);
+        console.log(A.prototype.a);
+        console.log(B.prototype.a);
+        console.log(C.prototype.a);
+    </script> -->
+</body>
+
+</html>
